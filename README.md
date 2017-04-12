@@ -7,6 +7,7 @@
 ## Tools, Languages, Libaraies used
 - Go:  1.8.1
 - Elastic Search: 5.3.0
+- SQLite3
 - Libraries:
   - "gopkg.in/olivere/elastic.v5" : Go client for Elastic Search.
     **(Used only for bulk request, Just tried out this library and didn't used it later on.)**
