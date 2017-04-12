@@ -10,7 +10,6 @@ import (
 )
 
 type Bucket struct {
-	// db tag lets you specify the column name if it differs from the struct field
 	Key      string `db:"key"`
 	DocCount int    `db:"doc_count"`
 	Created  int64
@@ -55,14 +54,12 @@ func PutToDB(data []byte, TableName string) []Bucket {
 
 func initDb(TableName string) *gorp.DbMap {
 	// connect to db using standard Go database/sql API
-	// use whatever database/sql driver you wish
 	db, err := sql.Open("sqlite3", "./myDb.db")
 	checkErr(err, "sql.Open failed")
 
 	// construct a gorp DbMap
 	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.SqliteDialect{}}
 
-	// add a table, setting the table name to 'posts' and
 	// specifying that the Id property is an auto incrementing PK
 	dbmap.AddTableWithName(Bucket{}, TableName).SetKeys(true, "Id")
 
