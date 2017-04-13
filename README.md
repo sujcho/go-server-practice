@@ -4,7 +4,7 @@
 1. Reads data from ElasticSearch summarizes the data and puts it in a different table in the database.
 2. Based on HTTP GET request of how many records and destination are required - send a reply from the summary table of the number of logs.
 
-## Tools, Languages, Libaraies used
+## Tools, Languages, Libraries used
 - Go:  1.8.1
 - Elastic Search: 5.3.0
 - Libraries:
@@ -19,9 +19,9 @@
 2. Place the input file in the same folder (with Go executable).
 3. Execute the program.
 4. Go to localhost:8080.
-  - at  / : It will automatically loads inputs, sends a INDEX request to Elastic Search. 
+  - at  / : It will automatically load inputs, send a INDEX request to Elastic Search. 
         Them, itt will show a list of id of Indexed documents.
-  - at /aggr : It will perform aggregation of some fields over indexed documents and saves results of each field into different tables in DB.
+  - at /aggr : It will perform aggregation of some fields over indexed documents and save results of each field into different tables in DB.
 **This program performs [Term Aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html) over some fields.**
  
  
